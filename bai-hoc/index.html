@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- 
+    Các thẻ thông dụng trong HTML
+    1. h1 - h6 ->heading
+    2. p ->paragraph
+    3. img ->image
+    4. a ->anchor
+    5. ol, ul, li ->unordered list, list item
+    6. table
+    7. input
+    8. button
+    9. div
+-->
+
+<!-- 
+    CSS color
+    1. rgb(red green blue)
+    2. rgb(red green blue / alpha)
+    3. rgb(red green blue, alpha)
+    4. Gray / Grey colors
+    5. transparent
+
+    8-bit = 0 - 255
+
+    bit (binary digit) => 1 bit = 0 / 1
+
+    Nếu alpha là 0.5 tính ra hệ thập lục phân là
+    255 * 0.5 = 127.5 làm tròn lên 128 (chỗ này lên mạng có thể đổi sang hex)
+    chuyển bằng cơm thì
+    128 / 16 = 8 (hệ số của thập lục phân là 16) phần dư của nó là 0
+    8 % 16 = 8
+    kết quả là 08 nhưng kết quả đúng thì phải đảo ngược trở lại là 80
+
+-->
+
+
+<!--Thẻ mở-->
+<html>
+ <!-- Phần đầu -->
+<head>
+    <!--Tiêu đề-->
+    <title>F8 - Shop</title>
+    <!--Hỗ trợ tiếng việt-->
+    <meta charset="UTF-8">
+
+
+
+    <!-- External -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Internal -->
+    <!-- <style>
+        h1{
+            color: red;
+            font-size: 30px;
+        }
+    </style> -->
+
+
+<!-- 
+    <style>
+        .box{
+            width: calc(120px);
+            height: 100px;
+            background: rgb(154, 152, 29);
+        }
+        /* .box:hover{
+            color: red;
+        } */
+        .box:active{
+            color: red;
+        }
+        
+        .box::after{
+            content: attr(data-title);
+        }
+        a::after{
+            content: "("attr(href) ")";
+        }
+        /* vw - width, vh - height */
+        /* viewport */
+    </style> -->
+    <style>
+        .box{
+            width: 60px;
+            height: 60px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* Đưa các box nằm ngang */
+            /* float: left; */
+        }
+        .box1{
+            background-color: #333;
+        }
+        .box2{
+            background-color: orange;
+        }
+        .box3{
+            background-color: firebrick;
+            /* Thuộc tính padding */
+            /* padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px; */
+            /* Thay vì viết dài dòng như này thì ta viết theo đó theo chiều kim đồng hồ */
+            padding: 10px 12px 8px 6px;
+
+            /* Thuộc tính border */
+            /* kiểu viết dài */
+            /* border-top-width:10px;
+            border-right-width:12px;
+            border-bottom-width:10px ;
+            border-left-width: 10px;
+            border-style: solid;
+            border-color: #333; */
+
+            /* kiểu viết ngắn hơn */
+            border: 10px solid #333 ;
+
+            /*  Thuộc tính margin  */
+            /* Này dùng để di chuyển các box */
+            /* Lớp margin này giải quyết bài toán mà padding và border khong làm được  */
+            /* margin-top: 20px;
+            margin-left: 20px; */
+
+            /* Kiểu viết ngắn hơn */
+            margin: 10px 20px 30px 40px;
+        }
+
+    </style>
+
+    <style>
+        .box4{
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            background-color: darkorchid;
+            padding: 16px;
+            border: 2px solid #333;
+            /* Thuộc tính box-sizing */
+            box-sizing:border-box;
+
+        }
+
+    </style>
+
+    <style>
+        .header{
+            width: 100%;
+            height: 100vh;
+
+            /* Này là ví dụ về background-igmage */
+            /* background-image:
+            url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/1200px-Golden_star.svg.png),
+            url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ60p7T44uwQN0ZlnMrXtMEDoLMhbd4EVBjZg&s) ;
+            background-size: 50%;
+            background-repeat: no-repeat; */
+
+
+            /* Này là ví dụ về linear-gradient */
+            /* background-image: linear-gradient(0deg, rgba(255, 255, 0, 0.5), rgba(0, 0 , 255 , 0.5))
+            , url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ60p7T44uwQN0ZlnMrXtMEDoLMhbd4EVBjZg&s);
+            background-size: 50%;
+            background-repeat: no-repeat; */
+            
+            /* Này ví dụ về cover và contain */
+            /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ60p7T44uwQN0ZlnMrXtMEDoLMhbd4EVBjZg&s);
+            background-repeat: no-repeat; */
+            /* background-size:  cover; contain */
+            /* background-size: 50%; */
+
+
+            /* Này là ví dụ Thuộc tính của background-orgin */
+            /* border:20px dashed #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+            background-origin: content-box; */
+
+            /* Ví dụ về background-position tức là chỉnh vị trí nền */
+            /* background-position: 50px 100px; */
+
+            /* Này là ví dụ bề shorthand cho background cài này dùng để viết gộp không cần dài dòng */
+            /* Giữa position và size phải có dấu gạch chéo */
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ60p7T44uwQN0ZlnMrXtMEDoLMhbd4EVBjZg&s) no-repeat center / contain ;
+        
+        }   
+    </style>
+
+    <style>
+
+        /* Ví dụ về position relative */
+        
+        h1{
+            /* relative là vị trí tương đối và vị trí tương đối lấy chính mình làm tọa độ */
+            position: relative;
+            top: 100px;
+            left: 100px;
+
+        }
+        .box5{
+            width: 100%;
+            height: 120px;
+            background-color: #333;
+            position: relative;
+        }
+        .header1{
+            /* fixed sẽ phụ thuộc vào cửa sổ trình duyệt */
+            width: 100%;
+            height: 42px;
+            background-color: #333;
+            position: fixed;
+            bottom: 0;
+
+        }
+        
+        .box-child{
+            /* absolute nó là con là nó sẽ bị phụ thuộc bởi cái thẻ gần nhất của thuộc tính position */
+            /* Nếu muốn nhìn xuyên qua chỉ cần bỏ width và height và cho top bottom left right bằng 0 */
+            /* width: 50px;
+            height: 50px; */
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }   
+
+        .h2{
+            /* sticky dùng để làm cái header bám dính tuy nhiên hạn chế sử dụng*/
+            padding: 0 16px;
+            color: #fff;
+            background-color: #333;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+    </style>
+</head>
+
+<!-- Phần thân -->
+<body>
+
+    <div>
+        <!-- Inline -->
+        <h1 style="color: red; font-size: 20px;">CSS in HTML?</h1>
+        <!-- Sử dụng CSS trong HTML -->
+        <ol>
+            <li>Internal</li>
+            <li>External</li>
+            <li>Inline</li>
+        </ol>
+    </div>
+
+    <!-- ID & Class -->
+    <div>
+        <h1 id="first-heading">CSS selectors?</h1>
+        <h1 class="second-heading">CSS selectors?</h1>
+        <h1 class="second-heading">CSS selectors?</h1>
+        <h2 class="second-heading">ID & Class?</h2>
+    </div>
+
+   <!-- <div>
+    <h1>Băng phủ tuyết trời âuu</h1>
+    <button>Đăng kí</button>
+    
+    <input type="text">
+
+    <p>Phú yên thiệt đẹp</p>
+    <img src=" đưa vào link ảnh" alt="Tên của ảnh">
+    <a href="https://fullstack.edu.vn/">Tới trang học lập trình</a>
+    <ul>
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+    </ul>
+    <table>
+        <thead>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Dịa chỉ</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>danh</td>
+                <td>phú yên</td>
+            </tr>
+
+        </tbody>
+    </table>
+   </div> -->
+    
+   <!-- <h1 title="Đây là tiêu đề">Attribute?</h1> -->
+
+   <div>
+    <h1>CSS variable?</h1>
+    <h2>CSS variable?</h2>
+    <h3>CSS variable?</h3>
+    <!-- <p class="decs">Trong chương trình này <a href="https://fullstack.edu.vn/">F8</a></p> -->
+   </div>
+
+   <!-- <div title="Đây là box" class="box" data-title="Day la box mau hong"></div>
+   <a href="https://fullstack.edu.vn/">Hoc lap trinh</a> -->
+
+
+
+   <div class="box box1">Box 1</div>
+   <div class="box box2">Box 2</div>
+   <div class="box box3">Box 3</div>
+
+   <div class="box4"> Đây là nội dung bài viết</div>
+
+   <div class="header"></div>
+
+   <div>
+    <h1>Position</h1>
+    <ul>
+        <li>Relative</li>
+        <li>Absolute</li>
+        <li>Fixed</li>
+        <li>Sticky</li>
+    </ul>
+
+    <div class="box5">
+        <div class="box-child"> helloo</div>
+    </div>
+
+    <div class="header1"></div>
+
+    <div class="h2"></div>
+   </div>
+</body>
+
+<!--Thẻ đóng-->
+</html>
